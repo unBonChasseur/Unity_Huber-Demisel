@@ -10,13 +10,17 @@ public class CarController : MonoBehaviour
 
     private float horizontalInput;
     private float verticalInput;
-    private float currentSteerAngle;
+    //private float currentSteerAngle;
     private float currentbreakForce;
     private bool isBreaking;
+
 
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteerAngle;
+    [SerializeField] private float currentSteerAngle;
+    [SerializeField] private float AngleVolant;
+    [SerializeField] private Transform VolantTransform;
 
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider frontRightWheelCollider;
@@ -30,16 +34,30 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        GetAngleVolant();
+
         GetInput();
         HandleMotor();
         HandleSteering();
         UpdateWheels();
     }
 
+    private void GetAngleVolant()
+    {
+        AngleVolant = VolantTransform.transform.eulerAngles.y;
+        //currentSteerAngle = AngleVolant;
+        if (AngleVolant >= 0 &&  AngleVolant <= 90){
+            horizontalInput = AngleVolant / 90;
+        }else if(AngleVolant > 270  && AngleVolant < 360){
+            horizontalInput = (AngleVolant-360) / 90;   
+        }
+        
+    }
 
     private void GetInput()
     {
-        horizontalInput = Input.GetAxis(HORIZONTAL);
+        //horizontalInput = Input.GetAxis(HORIZONTAL);
+        //print(horizontalInput)
         verticalInput = Input.GetAxis(VERTICAL);
         isBreaking = Input.GetKey(KeyCode.Space);
     }
