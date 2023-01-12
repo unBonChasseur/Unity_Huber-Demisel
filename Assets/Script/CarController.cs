@@ -40,7 +40,7 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GetAngleVolant();
+        //GetAngleVolant();
 
         GetInput();
         HandleMotor();
@@ -62,7 +62,7 @@ public class CarController : MonoBehaviour
 
     private void GetInput()
     {
-        //horizontalInput = Input.GetAxis(HORIZONTAL);
+        horizontalInput = Input.GetAxis(HORIZONTAL);
         //print(horizontalInput)
         //tourMax = 8500;
         switch (niveauBoiteVitesse)

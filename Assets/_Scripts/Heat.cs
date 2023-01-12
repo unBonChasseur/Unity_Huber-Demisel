@@ -9,9 +9,11 @@ public class Heat : MonoBehaviour
     private float timer = 150.0f;
 
     //Heat slider
+    [SerializeField]
     private Slider heat;
+
     //Boolean to run coroutine only once
-    private bool coroutine_running = false; 
+    private bool coroutine_running = false;
 
     void Start()
     {
@@ -19,7 +21,7 @@ public class Heat : MonoBehaviour
         heat = gameObject.GetComponent<Slider>();
         //We update the slider default values
         heat.maxValue = timer;
-        heat.value = timer; 
+        heat.value = timer;
     }
 
     //Function to set the heat timer values
@@ -32,7 +34,7 @@ public class Heat : MonoBehaviour
     //Function to get current value (useful to calculate score) 
     public float getHeatValue()
     {
-        return heat.value; 
+        return heat.value;
     }
 
     //To launch the timer when we see fit

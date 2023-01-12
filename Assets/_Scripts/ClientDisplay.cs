@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClientDisplay : MonoBehaviour
 {
@@ -9,9 +10,7 @@ public class ClientDisplay : MonoBehaviour
     [SerializeField]
     private GameObject m_clientImage;
     [SerializeField]
-    private GameObject m_clientText;
-
-    private float m_température;
+    private Text m_clientText;
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +22,15 @@ public class ClientDisplay : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Restaurant()
+    {
+        m_clientText.text = "Restaurant";
+    }
+
+    public void Client()
+    {
+        m_clientText.text = "Livrer";
     }
 }

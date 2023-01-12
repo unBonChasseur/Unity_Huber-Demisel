@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Restaurant
   layers:
   - Default
   - TransparentFX
@@ -11,6 +12,9 @@ TagManager:
   - 
   - Water
   - UI
+  - Viande
+  - Poisson
+  - Vegan
   - 
   - 
   - 
@@ -33,10 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - PostProcessing
   m_SortingLayers:
   - name: Default
     uniqueID: 0
